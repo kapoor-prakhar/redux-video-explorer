@@ -13,6 +13,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'stage-1']
         }
+      },
+      {
+          test: /\.css$/,
+          loader: 'style-loader!css-loader',
       }
     ]
   },
@@ -21,7 +25,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: './',inline:true,
+      port: 8008,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
